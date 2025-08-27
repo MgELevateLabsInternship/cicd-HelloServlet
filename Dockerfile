@@ -2,9 +2,9 @@
 FROM maven:3.9.4-eclipse-temurin-17 AS build
 WORKDIR /app
 
-# Copy only maven files first (for caching)
-COPY pom.xml mvnw ./
-COPY .mvn .mvn
+# Copy pom.xml first for caching
+COPY pom.xml ./
+
 
 # Copy source
 COPY src ./src
